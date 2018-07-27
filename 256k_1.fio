@@ -1,0 +1,41 @@
+[global]
+filename=/dev/sdc
+direct=1
+iodepth=1
+bs=256k
+
+[write-seq-256k]
+stonewall
+description="seq write, 256k blocks"
+size=100G
+rw=write
+write_lat_log=log/256k/256k_1_write-seq-lat.log
+write_bw_log=log/256k/256k_1_write-seq-bw.log
+write_iops_log=log/256k/256k_1_write-seq-iops.log
+
+[write-rand-256k]
+stonewall
+description="rand write, 256k blocks"
+size=100G
+rw=randwrite
+write_lat_log=log/256k/256k_1_write-rand-lat.log
+write_bw_log=log/256k/256k_1_write-rand-bw.log
+write_iops_log=log/256k/256k_1_write-rand-iops.log
+
+[read-seq-256k]
+stonewall
+description="seq read, 256k blocks"
+size=100G
+rw=read
+write_lat_log=log/256k/256k_1_read-seq-lat.log
+write_bw_log=log/256k/256k_1_read-seq-bw.log
+write_iops_log=log/256k/256k_1_read-seq-iops.log
+
+[read-rand-256k]
+stonewall
+description="rand read, 256k blocks"
+size=100G
+rw=randread
+write_lat_log=log/256k/256k_1_read-rand-lat.log
+write_bw_log=log/256k/256k_1_read-rand-bw.log
+write_iops_log=log/256k/256k_1_read-rand-iops.log
